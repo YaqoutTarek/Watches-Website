@@ -1,0 +1,47 @@
+@use "./variables" as *;
+
+
+@mixin flex($space,$direction) {
+    display: flex;
+    justify-content: $space;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin position-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+@mixin ul {
+    list-style: none;
+    display: inline-block;
+}
+
+@mixin button-hover {
+    background-color: $font-color;
+                color: $dark;
+                box-shadow:0 0 19px  $font-color;
+                border-color:  $font-color;
+}
+
+@mixin title {
+    font-size: 55px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $font-color;
+}
+
+@mixin button {
+    cursor: pointer;
+    padding: 5px 20px;
+    border-radius: $full-curve;
+    background-color: $dark;
+    color: $font-color;
+    box-shadow:0 0 8px $font-color;
+    transition: 0.2s;
+    text-transform: capitalize;
+}

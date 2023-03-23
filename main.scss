@@ -1,0 +1,404 @@
+@use "./SASS/_global.scss";
+@use "./SASS/mixin" as *;
+@use "./SASS/variables" as *;
+
+body {
+    background-color: $shadow;
+}
+section {
+    width: 100%;
+    min-height: 100vh;
+    background-image:linear-gradient(to left, $dark , $mid-dark);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    text-transform: capitalize;
+}
+nav {
+    @include flex(space-around,row);
+    @include position-fixed;
+    animation: light 5s infinite;
+    background-color: $dark;
+    text-transform: capitalize;
+    padding: $low;
+    
+    .logo {
+        color: $font-color;
+        text-transform: uppercase;
+        font-size: 30px;
+        span {
+            color: $dark-font-color;
+        }
+    }
+    ul {
+        margin-left: 100px;
+        li {
+            @include ul;
+            padding: $standard;
+        }
+        a {
+            text-decoration: none;
+            color: $font-color;
+            &:hover {
+                color: $dark-font-color;
+            }
+        }
+    }
+    .icons {
+        button {
+            @include button;
+            &:hover {
+                @include button-hover
+            }
+        }
+        #darkMood {
+            display: none;
+        }
+    }
+    i {
+        color: $font-color;
+        padding: $standard;
+        cursor: pointer;
+        &:hover{
+            color: $hover;
+        }
+    }
+}
+@keyframes light {
+    0% {
+        box-shadow: 0 0 12px $mid-dark;;
+    }
+    50% {
+        box-shadow: 0 0 8px $mid-light;;
+    }
+    100% {
+        box-shadow: 0 0 12px $mid-dark;;
+    }
+}
+@keyframes move { 
+    0% { 
+    transform-origin: 50% 0; 
+    transform: perspective(800px) rotateY(0deg); 
+    }
+    100% { 
+    transform-origin: 50% 0; 
+    transform: perspective(800px) rotateY(360deg); 
+    }
+}
+.main{
+    .mainContent{
+        width: 100%;
+        color: $font-color;
+        padding: 50px;
+        @include flex(space-around,row)
+    }
+    .mainText{
+        width: 50%;
+        padding-left: 100px;
+        padding-bottom: 100px;
+        .text {
+            width: 60%;
+            span{
+                font-size: 88px;
+                letter-spacing: 8px;
+                font-weight: lighter;
+            }
+        }
+        p {
+            font-size: 12px;
+            width: 80%;
+            padding: $low;
+        }
+        button {
+            @include button;
+            font-size: 20px;
+            margin: 5px;
+            &:hover {
+                @include button-hover
+            }
+            a {
+                text-decoration: none;
+                color: $font-color;
+                &:hover {
+                    @include button-hover
+                }
+            }
+        }
+    }
+    .icons {
+        @include flex(null,row);
+        gap: 10px;
+        padding: $standard;
+        i {
+            cursor: pointer;
+            &:hover {
+            color: $hover;
+            }
+        }
+    }
+    .mainImage{
+        width: 50%;
+        @include flex(null,null);
+    }
+}
+.products {
+    @include flex(space-between,column);
+    padding: 20px;
+    .title {
+        @include title
+    }
+    .cards {
+        padding: 40px 30px;
+        width: 90%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 25px 25px;
+    }
+    .card {
+        @include flex(null,column);
+        background-color: $dark;
+        padding: 15px 35px;
+        border-radius: $half-curve;
+        box-shadow:0 0 2px $font-color;
+        &:hover {
+            box-shadow:0 0 12px $font-color;
+        }
+        img:hover {
+            transform: scale(1.03);
+        }
+    }
+    h1,span {
+        color: $hover;
+    }
+    i {
+        font-size: 13px;
+        margin: 0 -10px;
+    }
+    button {
+        padding: 5px 12px;
+        border-radius: $half-curve;
+        text-transform: uppercase;
+        cursor: pointer;
+        &:hover {
+            letter-spacing: 1px;
+        }
+    }
+}
+.about {
+    @include flex(space-between,column);
+    padding: 50px 20px;
+    color: $font-color;
+    .title {
+        @include title
+    }
+    .box {
+        display: grid;
+        grid-template-columns:20% 50% 30%;
+        box-shadow:20 50 100px $shadow;
+        grid-gap: 25px 25px; 
+        width: 60%;
+        .ads {
+            display: grid;
+            grid-template-rows: 40% 50%;
+            grid-gap: 25px 0px; 
+        }
+        .ad {
+            background-color: $dark;
+            border-radius: $half-curve;
+            opacity: 20%;
+            overflow: hidden;
+            cursor: pointer;
+            &:hover {
+                opacity: 100%;
+            }
+        }
+        .show {
+            background-color: $font-color;
+            box-shadow:20 50 100px $shadow;
+            padding: 40px 20px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 20% 80%;
+            grid-gap: 25px 10px;
+            border-radius: $half-curve;
+        }
+    }
+    .sideBar {
+        @include flex(null,column);
+        gap: 10px;
+        .side {
+            background-color: $dark;
+            border-radius: $half-curve;
+            width: 100%;
+            padding: 15px;
+            opacity: 50%;
+            cursor: pointer;
+            &:hover {
+                opacity: 100%;
+            }
+            img:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+    .showBar {
+        background-image: linear-gradient(to top, $dark, $mid-dark);
+        border-radius: $half-curve;
+        padding: 15px;
+    }
+}
+.review {
+    @include flex(space-between,column);
+    padding: 50px 20px;
+    color: $font-color;
+    .title {
+        @include title
+    }
+    .box {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px 10px;
+        width:80%;
+    }
+    .elreview {
+        @include flex(null,column);
+        align-items: flex-start;
+        background-color: $mid-light;
+        color: $dark;
+        padding: 20px;
+        border-radius: $half-curve;
+        box-shadow: 0 0 12px $shadow;
+        .user {
+            @include flex(space-between,row);
+            gap: 15px;
+            i {
+                font-size: 50px;
+                color: $font-color;
+            }
+            .info i {
+                font-size: 16px;
+                margin: -55px 0px;
+                color: $font-color;
+            } 
+        }
+    }
+}
+.services {
+    @include flex(space-between,column);
+    padding: 50px 20px;
+    .title {
+        @include title;
+        padding:30px;
+    }
+    .servicesCards{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px 20px;
+        width:80%;
+    }
+    .services_box{
+        @include flex(null,column);
+        text-align: center;
+        color: $font-color;
+        cursor: pointer;
+        padding: $standard;
+        &:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px $shadow;
+        }
+        i {
+            font-size: 50px;
+            color: $font-color;
+        }
+    }
+}
+.form {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 40px;
+    position: relative;
+    .forming {
+        @include flex(space-between,column);
+        color: $font-color;
+        align-items: center;
+        gap: 10px;
+        padding: 30px;
+        margin-bottom: 100px;
+        position: relative;
+        width: 100%;
+        input {
+            position: relative;
+            padding: 8px;
+            background-color: transparent;
+            border: 2px $font-color solid;
+            border-radius: $half-curve;
+            text-align: center;
+            color: $font-color;
+        }
+        h1 {
+            font-size: 28px
+        }
+        i {
+            position: absolute;
+            z-index: 1;
+            margin: 12px;
+        }
+        a {
+            color: $font-color;
+            font-size: 12px;
+        }
+        button {
+            display:none ;
+            @include button;
+            width: 100%;
+            margin: 10px;
+            &:hover {
+                @include button-hover
+            }
+        }
+    }
+}
+@keyframes border {
+    0% {
+        border: solid 0px $font-color;
+        border-radius: $half-curve;
+    }
+    5% {
+        border: solid 1px $font-color;
+        border-radius: $half-curve;
+    }
+    10% {
+        border: solid 2px $font-color;
+        border-radius: $half-curve;
+    }
+    15% {
+        border: solid 3px $font-color;
+        border-radius: $half-curve;
+    }
+    20% {
+        border: solid 4px $font-color;
+        border-radius: $half-curve;
+    }
+    25% {
+        border: solid 5px $font-color;
+        border-radius: $half-curve;
+    }
+    50% {
+        border: solid 5px $font-color;
+        border-radius: $half-curve;
+    }
+    70% {
+        border: solid 4px $font-color;
+        border-radius: $half-curve;
+    }
+    85% {
+        border: solid 3px $font-color;
+        border-radius: $half-curve;
+    }
+    100% {
+        border: solid 2px $font-color;
+        border-radius: $half-curve;
+    }
+}

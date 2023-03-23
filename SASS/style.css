@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200&family=Passions+Conflict&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    transition: 0.5s;
+}
+::-webkit-scrollbar{
+    width: 15px;
+}
+
+::-webkit-scrollbar-track{
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.25);
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background: linear-gradient(to top, gold , rgb(140, 119, 1));
+}
+
+body {
+    background-color: #0D0D0D;
+}
+
+section {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(MATERIAL/background.png);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    text-transform: capitalize;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    animation: light 5s infinite;
+    background-color: #0D0D0D;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    text-transform: capitalize;
+    padding: 10px 0px;
+}
+@keyframes light {
+    0% {
+        box-shadow: 0 0 12px rgba(126, 126, 126, 0.6);;
+    }
+    50% {
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);;
+    }
+    100% {
+        box-shadow: 0 0 12px rgba(126, 126, 126, 0.6);;
+    }
+}
+
+nav .logo {
+    color: gold;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+nav .logo span {
+    color: goldenrod;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    padding:  10px;
+}
+nav ul li a {
+    color:white;
+    text-decoration: none;
+}
+nav ul li a:hover {
+    color: gold;
+}
+
+i {
+    color: gold;
+    padding: 10px;
+    cursor: pointer;
+}
+i:hover {
+    color: white;
+}
+@keyframes move { 
+    0% { 
+    transform-origin: 50% 0; 
+    transform: perspective(800px) rotateY(0deg); 
+    }
+    100% { 
+    transform-origin: 50% 0; 
+    transform: perspective(800px) rotateY(360deg); 
+    }
+}
+
+
+.main .mainContent {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 50px;
+    color: gold;
+}
+
+.mainText {
+    width: 50%;
+    padding-left: 100px;
+    padding-bottom: 100px;
+}
+.mainText .text {
+    width: 60%;
+}
+.mainText p {
+    font-size: 12px;
+    width: 80%;
+    padding: 10px 0px;
+}
+.mainText button a {
+    text-decoration: none;
+    color: gold;
+} 
+.mainText button {
+    padding: 5px 20px;
+    border-radius: 40px;
+    background-color: black;
+    color: gold;
+    box-shadow:0 0 8px gold;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 20px;
+    text-transform: capitalize;
+    margin: 5px;
+}
+.mainText button:hover,.mainText button a:hover, .forming button:hover {
+    background-color: gold;
+    color: #0D0D0D;
+    box-shadow:0 0 19px gold;
+    border-color: gold;
+}
+
+.main .icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 10px;
+}
+
+.mainImage {
+    width: 50%;
+    display: flex;
+    align-items: inherit;
+}
+img {
+    width: 100%;
+}
+
+.products {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.title {
+    font-size: 55px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: gold;
+}
+
+.products .cards {
+    padding: 40px 30px;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 25px 25px;
+}
+
+.products .card {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: black;
+    padding: 15px 35px;
+    border-radius: 25px;
+    box-shadow:0 0 2px gold;
+}
+.products .card:hover {
+    box-shadow:0 0 12px gold;
+    
+}
+.products img:hover {
+    transform: scale(1.03);
+}
+.products h1, .products span {
+    color: white;
+}
+.products i{
+    font-size: 13px;
+    margin: 0 -10px;
+}
+.products button {
+    padding: 5px 12px;
+    border-radius: inherit;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.products button:hover {
+    letter-spacing: 1px;
+}
+
+.about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px;
+    flex-direction: column;
+    color: gold;
+}
+.box {
+    display: grid;
+    grid-template-columns:20% 50% 30%;
+    grid-gap: 25px 25px; 
+    width: 60%;
+}
+
+.box .ads {
+    display: grid;
+    grid-template-rows: 40% 50%;
+    grid-gap: 25px 0px; 
+}
+.box .ad {
+    background-color: black;
+    border-radius: 20px;
+    opacity: 20%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.box .ad:hover {
+    opacity: 100%;
+}
+
+.box .show {
+    background-color: gold;
+    box-shadow:20 50 100px black;
+    padding: 40px 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-gap: 25px 10px;
+    border-radius: 20px;
+}
+.sideBar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.box .sideBar .side {
+    background-color: black;
+    border-radius: 20px;
+    width: 100%;
+    padding: 15px;
+    opacity: 50%;
+    cursor: pointer;
+}
+.box .sideBar .side:hover {
+    opacity: 100%;
+}
+.box .sideBar .side img:hover {
+    transform: scale(1.2);
+}
+.box .showBar {
+    background-image: linear-gradient(to top, black, rgb(50, 50, 50));
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.review {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px;
+    flex-direction: column;
+    color: gold;
+}
+.review .box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px 10px;
+    width:80%;
+}
+
+.elreview {
+    display:flex;
+    flex-direction: column;
+    background-color: #A6A6A6;
+    color: #0D0D0D;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 12px black;
+}
+.elreview .user {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+.user i,.services_box i {
+    font-size: 50px;
+}
+.user .info i {
+    font-size: 16px;
+    margin: -5px -10px;
+} 
+
+.services {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px;;
+}
+.servicesCards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px 20px;
+    width:80%;
+}
+.services_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: gold;
+    cursor: pointer;
+    padding: 10px;
+}
+.services_box:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px black;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    grid-gap: 25px 30px;
+    width: 100%;
+}
+
+.forming {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: gold;
+    align-items: center;
+    gap: 10px;
+    padding: 30px;
+}
+.forming input {
+    position: relative;
+    padding: 8px;
+    background-color: transparent;
+    border: 2px gold solid;
+    border-radius: 20px;
+    text-align: center;
+    color: gold;
+}
+.forming h1 {
+    font-size: 28px
+}
+.forming i {
+    position: absolute;
+    z-index: 1;
+}
+.forming a {
+    color: gold;
+    font-size: 12px;
+}
+.forming button {
+    width: 20%;
+    padding: 5px 20px;
+    border-radius: 40px;
+    background-color: black;
+    color: gold;
+    box-shadow:0 0 8px gold;
+    cursor: pointer;
+    transition: 0.2s;
+    margin: 10px;
+    text-transform: capitalize;
+}
