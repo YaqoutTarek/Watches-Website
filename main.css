@@ -342,7 +342,6 @@ nav i:hover {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  padding: 50px 20px;
   color: var(--font-color);
 }
 .review .title {
@@ -355,7 +354,8 @@ nav i:hover {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px 10px;
-  width: 80%;
+  width: 100%;
+  padding: 10px 50px;
 }
 .review .elreview {
   display: flex;

@@ -188,6 +188,7 @@ nav {
     @include flex(space-between,column);
     padding: 50px 20px;
     color: $font-color;
+    
     .title {
         @include title
     }
@@ -197,6 +198,7 @@ nav {
         box-shadow:20 50 100px $shadow;
         grid-gap: 25px 25px; 
         width: 60%;
+        
         .ads {
             display: grid;
             grid-template-rows: 40% 50%;
@@ -221,6 +223,7 @@ nav {
             grid-template-columns: 20% 80%;
             grid-gap: 25px 10px;
             border-radius: $half-curve;
+            
         }
     }
     .sideBar {
@@ -249,7 +252,6 @@ nav {
 }
 .review {
     @include flex(space-between,column);
-    padding: 50px 20px;
     color: $font-color;
     .title {
         @include title
@@ -258,7 +260,8 @@ nav {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 20px 10px;
-        width:80%;
+        width:100%;
+        padding: 10px 50px;
     }
     .elreview {
         @include flex(null,column);
